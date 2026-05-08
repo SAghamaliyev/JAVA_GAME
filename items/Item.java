@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public abstract class Item {
     protected String name;                 // Item name (Apple, Key, Potion etc.)
-    protected BufferedImage sprite;        // Sprite(icon) for UI and inventory
+    protected BufferedImage icon;        // Sprite(icon) for UI and inventory
     protected boolean consumable = false;  // If true item will be removed after use
     
     public Item(String name) {
