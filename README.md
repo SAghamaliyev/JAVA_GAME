@@ -41,46 +41,45 @@ src/
 │
 ├── main/
 │   ├── Main.java             # Entry point — launches the game window
-│   ├── GamePanel.java        # Core game loop and rendering
-│   └── GameState.java        # Manages active game states (menu, playing, etc.)
+│   ├── GamePanel.java        # Core game loop and rendering (paintComponent)
+│   └── GameState.java        # Enum: MENU, PLAYING, PAUSED, GAME_OVER
 │
 ├── entities/
-│   ├── Entity.java           # Base class for all game entities
-│   ├── Player.java           # Player character logic and movement
-│   ├── Enemy.java            # Enemy behaviour and AI
-│   ├── Chest.java            # Lootable chest entity
-│   ├── Door.java             # Door entity (requires key to open)
-│   └── Food.java             # Food pickup entity
-│
-├── world/
-│   ├── Room.java             # Individual dungeon room
-│   ├── Dungeon.java          # Dungeon layout and room management
-│   └── TileManager.java      # Loads and renders tile maps
+│   ├── Entity.java           # Abstract base — x, y, width, height, BufferedImage sprite
+│   ├── Player.java           # Movement, interaction, inventory reference
+│   ├── Enemy.java            # AI, patrol, attack logic
+│   ├── Chest.java            # Lootable chest; holds Item list; draws chest sprite
+│   └── Door.java             # Locked door; unlock(Key); draws door sprite
 │
 ├── items/
-│   ├── Item.java             # Base class for all items
-│   ├── Key.java              # Key item (opens doors)
-│   ├── Crowbar.java          # Crowbar item (forces open chests)
-│   └── Inventory.java        # Player inventory logic
+│   ├── Item.java             # Abstract base — name, BufferedImage icon, use()
+│   │   ├── Food.java         # Abstract — healAmount; eat() restores HP
+│   │   │   ├── Apple.java    # +5 HP
+│   │   │   ├── Cake.java     # +20 HP
+│   │   │   └── Potion.java   # +15 HP, cures debuffs
+│   │   ├── Key.java          # Opens Door entities
+│   │   └── Crowbar.java      # Forces open Chest entities
+│
+├── world/
+│   ├── Room.java             # Tile grid, exits, list of entities in room
+│   ├── Dungeon.java          # Room[][]; generates layout; tracks current room
+│   └── TileManager.java      # Loads tileset PNG; draws tiles via g2.drawImage()
 │
 ├── ui/
-│   ├── Menu.java             # Main menu screen
-│   ├── HUD.java              # Heads-up display (health, stats)
-│   └── InventoryUI.java      # In-game inventory overlay
+│   ├── Menu.java             # Main menu screen; draws buttons
+│   ├── HUD.java              # HP bar, key count, active item icon
+│   └── InventoryUI.java      # Grid overlay; renders Item icons from Inventory
 │
 ├── input/
-│   └── KeyboardHandler.java  # Captures and processes keyboard input
+│   └── KeyboardHandler.java  # KeyListener; boolean map keyPressed[]
 │
 ├── managers/
-│   ├── CollisionManager.java # Handles entity-tile and entity-entity collisions
-│   └── EntityManager.java    # Tracks and updates all active entities
+│   ├── EntityManager.java    # List<Entity>; update() and draw() all entities
+│   ├── CollisionManager.java # Tile collision + entity–entity overlap checks
+│   └── Inventory.java        # Slots[], add/remove/get; used by Player
 │
-├── utils/
-│   └── Constants.java        # Shared constants (tile size, screen dimensions, etc.)
-│
-└── assets/
-    ├── sprites/              # Sprite sheets and images
-    └── sounds/               # Sound effects and music
+└── utils/
+    └── Constants.java        # TILE_SIZE, SCREEN_COLS, SCREEN_ROWS, FPS, SCALE
 ```
 
 ---
