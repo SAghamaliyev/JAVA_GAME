@@ -3,7 +3,7 @@ package items;
 public class Apple extends Food {
   
   public Apple(){
-    super("Apple", 5);
+    super("Apple", 5, false);
   }
 
   @Override
