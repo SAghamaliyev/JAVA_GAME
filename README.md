@@ -46,10 +46,10 @@ src/
 │
 ├── entities/
 │   ├── Entity.java           # Abstract base — x, y, width, height, BufferedImage sprite
-│   ├── Player.java           # Movement, interaction, inventory reference
-│   ├── Enemy.java            # AI, patrol, attack logic
-│   ├── Chest.java            # Lootable chest; holds Item list; draws chest sprite
-│   └── Door.java             # Locked door; unlock(Key); draws door sprite
+│   │   ├── Player.java       # Movement, interaction, inventory reference
+│   │   ├── Enemy.java        # AI, patrol, attack logic
+│   │   ├── Chest.java        # Lootable chest; holds Item list; draws chest sprite
+│   │   └── Door.java         # Locked door; unlock(Key); draws door sprite
 │
 ├── items/
 │   ├── Item.java             # Abstract base — name, BufferedImage icon, use()
