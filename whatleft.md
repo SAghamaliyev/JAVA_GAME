@@ -36,19 +36,8 @@ resources/
 │   ├── player.png        (48×48 or 48×192 spritesheet: 4 directions) teymur
 │   ├── enemy.png         (48×48) teymur
 │   ├── boss.png          (64×64 or 96×96) teymur
-│   ├── chest.png         (48×48) said
-│   ├── chest_open.png    (48×48) said
-│   ├── barrel.png        (48×48) said
-│   ├── barrel_broken.png (48×48) said
 │   ├── door_locked.png   (48×48) teymur
 │   ├── door_open.png     (48×48) teymur
-│   ├── key.png           (32×32) said
-│   ├── apple.png         (32×32) said
-│   ├── cake.png          (32×32) said
-│   ├── potion.png        (32×32) said
-│   ├── crowbar.png       (32×32) said
-│   ├── gun.png           (32×32) said
-│   ├── bullet.png        (16×16) said
 │   ├── floor.png         (48×48) teymur
 │   ├── wall.png          (48×48) teymur
 │   └── achievement.png   (48×48) teymur
