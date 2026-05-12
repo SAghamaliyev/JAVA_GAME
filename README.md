@@ -29,6 +29,7 @@ javac -d out entities/*.java items/*.java managers/*.java world/*.java graphics/
 
 **2. Run the game:**
 ```bash
+cp main/bella_ciao.wav out/main/bella_ciao.wav
 java -cp out main.Main
 ```
 
