@@ -17,6 +17,7 @@ public class Assets {
     public static BufferedImage doorOpen;
     public static BufferedImage achievement;
     public static BufferedImage bullet;
+    public static BufferedImage[] comicPages;
 
     
     public static BufferedImage keyIcon;
@@ -66,5 +67,10 @@ public class Assets {
 
         floorTile    = SpriteLoader.load("resources/sprites/floor.png");
         wallTile     = SpriteLoader.load("resources/sprites/wall.png");
+
+        comicPages = new BufferedImage[3];
+        comicPages[0] = SpriteLoader.load("resources/images/page1.png");
+        comicPages[1] = SpriteLoader.load("resources/images/page2.png");
+        comicPages[2] = SpriteLoader.load("resources/images/page3.png");
     }
 }

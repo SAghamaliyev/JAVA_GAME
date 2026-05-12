@@ -8,6 +8,7 @@ import graphics.Assets;
 import world.*;
 import ui.HUD;
 import ui.InventoryUI;
+import ui.ComicScene;
 import utils.Constants;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -37,6 +38,7 @@ public class GamePanel extends JPanel implements Runnable {
     private ui.Menu menu;
     private HUD hud;
     private InventoryUI inventoryUI;
+    private ComicScene comicScene;
 
     private boolean pauseReleased = true;
     private CopyOnWriteArrayList<Bullet> bullets;
@@ -55,6 +57,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         gameState = GameState.MENU;
         menu = new ui.Menu(keyHandler);
+        comicScene = new ComicScene(keyHandler);
         bullets = new CopyOnWriteArrayList<>();
     }
 
@@ -123,7 +126,17 @@ public class GamePanel extends JPanel implements Runnable {
         switch (gameState) {
             case MENU:
                 String result = menu.update();
-                if (result.equals("PLAYING")) { initGame(); gameState = GameState.PLAYING; }
+                if (result.equals("PLAYING")) { 
+                    comicScene.reset();
+                    gameState = GameState.STORY; 
+                }
+                break;
+            case STORY:
+                comicScene.update();
+                if (comicScene.isFinished()) {
+                    initGame();
+                    gameState = GameState.PLAYING;
+                }
                 break;
             case PLAYING:
                 updatePlaying();
@@ -382,6 +395,9 @@ public class GamePanel extends JPanel implements Runnable {
         switch (gameState) {
             case MENU:
                 menu.draw(g2);
+                break;
+            case STORY:
+                comicScene.draw(g2);
                 break;
             case PLAYING:
                 drawPlaying(g2);
