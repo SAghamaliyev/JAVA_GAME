@@ -13,12 +13,6 @@ public abstract class Food extends Item {
         this.consumable = true;
     }
 
-    @Override
-    public void use() {
-        
-        
-    }
-
     
     public int getHealAmount() {
         return healAmount;
