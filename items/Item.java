@@ -11,10 +11,6 @@ public abstract class Item {
     public Item(String name) {
         this.name = name;
     }
-
-    
-    public abstract void use();
-
     
     public void draw(Graphics2D g2, int x, int y, int size) {
         if (icon != null) {
