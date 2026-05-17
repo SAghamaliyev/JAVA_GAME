@@ -7,13 +7,13 @@ public class Lock {
 
     
     public Lock(String requiredKeyId) {
-        this.locked        = true;
+        this.locked  = true;
         this.requiredKeyId = requiredKeyId;
     }
 
     
     public Lock() {
-        this.locked        = false;
+        this.locked  = false;
         this.requiredKeyId = null;
     }
 
