@@ -11,12 +11,6 @@ public class Key extends Item {
         this.keyId = keyId;
         this.icon = Assets.keyIcon;
     }
-
-    @Override
-    public void use() {
-        
-    }
-
     
     public int getId() {
         return keyId;
