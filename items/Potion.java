@@ -9,8 +9,4 @@ public class Potion extends Food {
     this.icon = Assets.potionIcon;
   }
 
-  @Override
-  public void use(){
-    
-  }
 }
