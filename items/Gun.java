@@ -15,11 +15,6 @@ public class Gun extends Item {
         this.icon = Assets.gunIcon;
     }
 
-    @Override
-    public void use() {
-        
-        
-    }
 
     public boolean canFire() {
         return currentCooldown <= 0;
