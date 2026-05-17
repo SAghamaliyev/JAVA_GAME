@@ -3,10 +3,10 @@ package items;
 public class Lock {
 
     private boolean locked;
-    private String  requiredKeyId;
+    private int  requiredKeyId;
 
     
-    public Lock(String requiredKeyId) {
+    public Lock(int requiredKeyId) {
         this.locked  = true;
         this.requiredKeyId = requiredKeyId;
     }
@@ -18,7 +18,7 @@ public class Lock {
     }
 
     
-    public boolean unlock(String keyId) {
+    public boolean unlock(int keyId) {
         if (locked && requiredKeyId != null && requiredKeyId.equals(keyId)) {
             locked = false;
             return true;
@@ -34,7 +34,7 @@ public class Lock {
         return locked; 
     }
 
-    public String getRequiredKeyId() { 
+    public int getRequiredKeyId() { 
         return requiredKeyId; 
     }
 }
