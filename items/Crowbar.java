@@ -8,10 +8,4 @@ public class Crowbar extends Item {
         this.icon = Assets.crowbarIcon;
     }
 
-    
-  
-    @Override
-    public void use() {
-        
-    }
 }
