@@ -9,8 +9,4 @@ public class Apple extends Food {
     this.icon = Assets.appleIcon;
   }
 
-  @Override
-  public void use(){
-    
-  }
 }
