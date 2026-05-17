@@ -65,21 +65,6 @@ public class ComicScene {
             
             g2.drawImage(img, x, y, drawW, drawH, null);
         }
-
-        // Draw "Press ENTER to continue" at the bottom
-        // g2.setFont(new Font("SansSerif", Font.BOLD, 20));
-        // String text = "Press ENTER to continue (" + (currentPage + 1) + "/" + Assets.comicPages.length + ")";
-        
-        // Add a subtle shadow/background for readability
-        // FontMetrics fm = g2.getFontMetrics();
-        // int tx = (Constants.SCREEN_WIDTH - fm.stringWidth(text)) / 2;
-        // int ty = Constants.SCREEN_HEIGHT - 30;
-        
-        // g2.setColor(new Color(0, 0, 0, 150));
-        // g2.fillRect(tx - 5, ty - fm.getAscent() - 2, fm.stringWidth(text) + 10, fm.getHeight() + 4);
-        
-        // g2.setColor(Color.WHITE);
-        // g2.drawString(text, tx, ty);
     }
 
     public boolean isFinished() {
